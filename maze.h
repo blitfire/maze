@@ -13,8 +13,11 @@
 
 typedef struct Maze {
     Cell cells[ROWS][COLS];
+    Edge edges[(2*ROWS*COLS)-ROWS-COLS];
+    Edge* walls[(ROWS*COLS)-ROWS-COLS-1];
 } Maze;
 
 void initMaze(Maze* maze);
+void findSpanningTree(Maze* maze);
 
 #endif //MAZE_MAZE_H

@@ -5,14 +5,15 @@
 #ifndef MAZE_EDGE_H
 #define MAZE_EDGE_H
 
-#include "cell.h"
+struct Cell;
 
 typedef struct Edge {
-    char minimumSpanning;
     unsigned char weight;
-    Cell endpoints[2];
+    struct Cell* start;
+    struct Cell* end;
 } Edge;
 
-void initEdge(Edge* newEdge, Cell *endpoints);
+void initEdge(Edge* newEdge);
+void setEndpoints(Edge* edge, struct Cell* start, struct Cell* end);
 
 #endif //MAZE_EDGE_H

@@ -3,10 +3,16 @@
 //
 
 #include "edge.h"
+#include "stdlib.h"
+#include "time.h"
 
-void initEdge(Edge* newEdge, Cell *endpoints) {
-    newEdge->endpoints[0] = endpoints[0];
-    newEdge->endpoints[1] = endpoints[1];
-    newEdge->weight = 1;
-    newEdge->minimumSpanning = 0;
+#include "cell.h"
+
+void initEdge(Edge* newEdge) {
+    newEdge->weight = rand() % 128;
+}
+
+void setEndpoints(Edge* edge, struct Cell* start, struct Cell* end) {
+    edge->start = start;
+    edge->end = end;
 }
