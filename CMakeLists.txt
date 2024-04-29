@@ -9,4 +9,7 @@ add_executable(maze main.c
         edge.c
         edge.h
         maze.c
-        maze.h)
+        maze.h
+        edgequeue.h
+        edgequeue.c
+)

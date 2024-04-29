@@ -13,7 +13,7 @@ typedef struct Edge {
     struct Cell* end;
 } Edge;
 
-void initEdge(Edge* newEdge);
-void setEndpoints(Edge* edge, struct Cell* start, struct Cell* end);
+Edge newEdge(struct Cell* start, struct Cell* end);
+void testEdge(Edge* edge);
 
 #endif //MAZE_EDGE_H

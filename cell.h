@@ -8,16 +8,12 @@
 #include "edge.h"
 
 typedef struct Cell {
-    Edge* open[4];
+    char isInMST;
+    struct Cell* adjacent[4];
 } Cell;
 
 void initCell(Cell* newCell);
-void setRight(Cell* from, Cell* too, Edge* edge);
-void setDown(Cell* from, Cell* too, Edge* edge);
-
-void cutUp(Cell* cell);
-void cutRight(Cell* cell);
-void cutDown(Cell* cell);
-void cutLeft(Cell* cell);
+void setRight(Cell* from, Cell* too);
+void setDown(Cell* from, Cell* too);
 
 #endif //MAZE_CELL_H

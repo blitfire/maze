@@ -3,20 +3,21 @@
 //
 
 #include "cell.h"
-#include "edge.h"
+#include <stdlib.h>
 
-void setRight(Cell* from, Cell* too, Edge* edge) {
-    from->open[1] = edge;
-    too->open[3] = edge;
-    setEndpoints(edge, from, too);
+void initCell(Cell* newCell) {
+    *newCell = (Cell) {
+        .adjacent = { NULL }
+    };
+    newCell->isInMST = 0;
 }
 
-void setDown(Cell* from, Cell* too, Edge* edge) {
-    from->open[2] = edge;
-    too->open[0] = edge;
-    setEndpoints(edge, from, too);
+void setRight(Cell* from, Cell* too) {
+    from->adjacent[1] = too;
+    too->adjacent[3] = from;
 }
 
-void cutUp(Cell* cell) {
-
+void setDown(Cell* from, Cell* too) {
+    from->adjacent[2] = too;
+    too->adjacent[0] = from;
 }
